@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{674B9153-797A-1668-8C0B-2FF8334077C0}") = "TowersOfHell", "Assembly-CSharp-firstpass.csproj", "{974B48E5-E46A-6ABE-1584-2CD2875C70E2}"
 EndProject
+Project("{674B9153-797A-1668-8C0B-2FF8334077C0}") = "TowersOfHell", "Assembly-CSharp.csproj", "{7AAF7021-773B-7F81-20CC-6CF184F35333}"
+EndProject
 Project("{674B9153-797A-1668-8C0B-2FF8334077C0}") = "TowersOfHell", "Assembly-CSharp-Editor.csproj", "{71F8E84A-8A02-9139-C466-7D196FA07A6C}"
 EndProject
 Project("{674B9153-797A-1668-8C0B-2FF8334077C0}") = "TowersOfHell", "Assembly-UnityScript-firstpass.unityproj", "{568EA592-8083-4A5E-7C06-B548AD17C2D3}"
@@ -19,6 +21,10 @@ Global
 		{974B48E5-E46A-6ABE-1584-2CD2875C70E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974B48E5-E46A-6ABE-1584-2CD2875C70E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974B48E5-E46A-6ABE-1584-2CD2875C70E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAF7021-773B-7F81-20CC-6CF184F35333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAF7021-773B-7F81-20CC-6CF184F35333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAF7021-773B-7F81-20CC-6CF184F35333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAF7021-773B-7F81-20CC-6CF184F35333}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71F8E84A-8A02-9139-C466-7D196FA07A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71F8E84A-8A02-9139-C466-7D196FA07A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F8E84A-8A02-9139-C466-7D196FA07A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
