@@ -19,6 +19,7 @@ public class TowerAttackScript : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Enemy") {
 			GameObject ball = Instantiate (ballPrefab, new Vector3 (-129.8f, -247.4f, 191.80f), gameObject.transform.rotation) as GameObject;
+			ball.SetActive (true);
 			Rigidbody rb = new Rigidbody ();
 			rb = ball.GetComponent<Rigidbody>();
 			rb.AddForce (1500,5,5);
