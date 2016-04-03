@@ -1,0 +1,28 @@
+# Written by MakeHuman 1.0.2
+version v1.0.2
+tags temp
+face eyebrows-trans-depth-less-more -0.066000
+face eyebrows-angle-up-down -0.090000
+face head-angle-in-out 0.734000
+hair mhair02 f81a4e9a-e3d7-4ecb-bdf0-16d7fd9070a4
+eyebrows Eyebrow008 79ea307f-a942-40dd-bf50-bbaa41f02034
+eyes Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa
+clothes Germanic_Clothes 413a18ad-bf0d-446c-ab74-e2dab1ae005f
+clothesHideFaces True
+gendered BreastFirmness 0.500000
+gendered BreastSize 0.500000
+macro Weight 0.897000
+macro Gender 1.000000
+macro Age 0.600000
+macro Height 0.655000
+macro Asian 0.066946
+macro African 0.078054
+macro Caucasian 0.855000
+macro Muscle 0.848000
+macro BodyProportions 0.497000
+background enabled False
+skinMaterial skins/young_asian_female/young_asian_female_sweat.mhmat
+material mhair02 f81a4e9a-e3d7-4ecb-bdf0-16d7fd9070a4 hair/mhair02/materials/male02_black.mhmat
+material Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa eyes/materials/brown.mhmat
+skeleton game.json
+subdivide False
