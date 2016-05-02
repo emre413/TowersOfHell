@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
-	public int speed = 8;
-
+	public int speed = 1;
+	public bool start = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,7 +16,8 @@ public class EnemyMovement : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		transform.position += transform.forward * speed * Time.deltaTime;
+		if (start)
+			transform.position += transform.forward * speed * Time.deltaTime;
 	}
 
 	void OnTriggerEnter ( Collider other)
@@ -24,4 +25,10 @@ public class EnemyMovement : MonoBehaviour {
 		if (other.gameObject.tag == "Player")
 			speed = 0;
 	}
+
+	void StartMove ()
+	{
+		start = true;
+	}
+
 }

@@ -17,12 +17,17 @@ public class TowerAttackScript : MonoBehaviour {
 
 	void OnTriggerEnter ( Collider other)
 	{
+		int force = 1000;
 		if (other.gameObject.tag == "Enemy") {
-			GameObject ball = Instantiate (ballPrefab, new Vector3 (-129.8f, -247.4f, 191.80f), gameObject.transform.rotation) as GameObject;
+			Vector3 pos = gameObject.transform.position;
+			pos.y += 23;
+			if (gameObject.transform.position.x > -70)
+				force *= -1;
+			GameObject ball = Instantiate (ballPrefab, pos, gameObject.transform.rotation) as GameObject;
 			ball.SetActive (true);
 			Rigidbody rb = new Rigidbody ();
 			rb = ball.GetComponent<Rigidbody>();
-			rb.AddForce (1500,5,5);
+			rb.AddForce (force,5,5);
 		}
 	}
 }

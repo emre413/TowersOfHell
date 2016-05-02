@@ -13,27 +13,27 @@ animator = GetComponent(Animator);
  
 function Update () {
  
-v = Input.GetAxis("Vertical");
-h = Input.GetAxis("Horizontal");
-Sprinting();
+	v = Input.GetAxis("Vertical");
+	h = Input.GetAxis("Horizontal");
+	Sprinting();
 }
  
 function FixedUpdate () {
  
-animator.SetFloat ("Walk", v);
-animator.SetFloat ("Turn", h);
-animator.SetFloat("Sprint", sprint);
+	animator.SetFloat ("Walk", v);
+	animator.SetFloat ("Turn", h);
+	animator.SetFloat("Sprint", sprint);
  
 }
  
 
  function Sprinting () {
-if(Input.GetButton("Fire1")) {
-sprint = 0.2;
-}
-else {
- 
-sprint = 0.0;
-}
- 
+	if(Input.GetButton("Fire1")) {
+		sprint = 0.2;
+	}
+	else {
+	 
+	sprint = 0.0;
+	}
+	 
 }

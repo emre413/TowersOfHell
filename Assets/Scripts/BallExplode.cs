@@ -4,6 +4,7 @@ using System.Collections;
 public class BallExplode : MonoBehaviour {
 
 	public GameObject explosion;
+	public AudioClip sound;
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag("Terrain") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Road")) {
@@ -11,6 +12,7 @@ public class BallExplode : MonoBehaviour {
 
 			newExplosion.SetActive (true);
 
+			AudioSource.PlayClipAtPoint (sound, other.transform.position);
 			Destroy (newExplosion, 5);
 
 			Destroy (gameObject);
