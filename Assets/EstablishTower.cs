@@ -16,12 +16,14 @@ public class EstablishTower : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit hit;
 				if (Physics.Raycast (ray, out hit, 500)) {
+					if (gameObject.name == "Plane") {
+						GameObject tower = Instantiate (towerPrefab, hit.transform.position, gameObject.transform.rotation) as GameObject;
 
-					GameObject tower = Instantiate (towerPrefab, hit.transform.position, gameObject.transform.rotation) as GameObject;
-					if (hit.transform.position.x > -70) {
-						tower.transform.Rotate (0, 270, 0);
-					} else {
-						tower.transform.Rotate (0, 90, 0);
+						if (hit.transform.position.x > -70) {
+							tower.transform.Rotate (0, 270, 0);
+						} else {
+							tower.transform.Rotate (0, 90, 0);
+						}
 					}
 				}
 			}
