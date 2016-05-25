@@ -11,7 +11,7 @@ public class EstablishTower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Camera.main){
+		if (Camera.main.name == "CameraMain"){
 			if (Input.GetMouseButtonDown (0)) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit hit;
