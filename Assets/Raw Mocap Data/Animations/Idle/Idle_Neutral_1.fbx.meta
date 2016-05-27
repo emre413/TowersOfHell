@@ -190,7 +190,7 @@ ModelImporter:
       name: Idle_Neutral_1
       takeName: _87_88_a_U1_M_P_idle_Neutral__Fb_p0_No_0_PJ_1
       firstFrame: 80
-      lastFrame: 120
+      lastFrame: 200
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -199,8 +199,8 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
