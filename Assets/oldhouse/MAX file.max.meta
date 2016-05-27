@@ -4,7 +4,30 @@ timeCreated: 1462219215
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: 0a565e37
+    100002: 6b696b5f
+    100004: a97ad49c
+    100006: cbdd7173
+    100008: //RootNode
+    400000: 0a565e37
+    400002: 6b696b5f
+    400004: a97ad49c
+    400006: cbdd7173
+    400008: //RootNode
+    2300000: 0a565e37
+    2300002: 6b696b5f
+    2300004: a97ad49c
+    2300006: cbdd7173
+    3300000: 0a565e37
+    3300002: 6b696b5f
+    3300004: a97ad49c
+    3300006: cbdd7173
+    4300000: a97ad49c
+    4300002: cbdd7173
+    4300004: 0a565e37
+    4300006: 6b696b5f
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

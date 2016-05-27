@@ -1,7 +1,8 @@
 ﻿#pragma strict
 var animator : Animator; 
 var v : float; 
-var h : float; 
+var h : float;
+var swing : boolean;
 
 var sprint : float;
  
@@ -15,6 +16,13 @@ function Update () {
  
 	v = Input.GetAxis("Vertical");
 	h = Input.GetAxis("Horizontal");
+
+	if(Input.GetMouseButton(0)) {
+		swing = true;
+	} else {
+		swing = false;
+	}
+
 	Sprinting();
 }
  
@@ -22,8 +30,8 @@ function FixedUpdate () {
  
 	animator.SetFloat ("Walk", v);
 	animator.SetFloat ("Turn", h);
+	animator.SetBool("Swing", swing);
 	animator.SetFloat("Sprint", sprint);
- 
 }
  
 
