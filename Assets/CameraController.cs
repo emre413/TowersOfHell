@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space)){
 			cam1.enabled = false;
 			cam2.enabled = true;
+
 			EnemyMovement em = new EnemyMovement ();
 			em.start = true;
 		}

@@ -3,6 +3,7 @@ var animator : Animator;
 var v : float; 
 var h : float;
 var swing : boolean;
+var cam2 : Camera;
 
 var sprint : float;
  
@@ -13,25 +14,28 @@ animator = GetComponent(Animator);
 }
  
 function Update () {
- 
-	v = Input.GetAxis("Vertical");
-	h = Input.GetAxis("Horizontal");
 
-	if(Input.GetMouseButton(0)) {
-		swing = true;
-	} else {
-		swing = false;
+	if(cam2.enabled) {
+		v = Input.GetAxis("Vertical");
+		h = Input.GetAxis("Horizontal");
+
+		if(Input.GetMouseButton(0)) {
+			swing = true;
+		} else {
+			swing = false;
+		}
+
+		Sprinting();
 	}
-
-	Sprinting();
 }
  
 function FixedUpdate () {
- 
-	animator.SetFloat ("Walk", v);
-	animator.SetFloat ("Turn", h);
-	animator.SetBool("Swing", swing);
-	animator.SetFloat("Sprint", sprint);
+ 	if(cam2.enabled) {
+		animator.SetFloat ("Walk", v);
+		animator.SetFloat ("Turn", h);
+		animator.SetBool("Swing", swing);
+		animator.SetFloat("Sprint", sprint);
+	}
 }
  
 

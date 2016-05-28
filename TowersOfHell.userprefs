@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\KillEnemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Character\animations.js">
     <Files>
+      <File FileName="Assets\CameraController.cs" Line="7" Column="22" />
       <File FileName="Assets\Scripts\KillEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Character\animations.js" Line="1" Column="1" />
       <File FileName="Assets\EstablishTower.cs" Line="1" Column="1" />
       <File FileName="Assets\Attack.cs" Line="1" Column="1" />
       <File FileName="Assets\ArrowShoot.cs" Line="1" Column="1" />
-      <File FileName="Assets\CameraController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TowerAttackScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Character\animations.js" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
