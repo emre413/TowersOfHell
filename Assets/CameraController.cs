@@ -15,12 +15,17 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.Space)){
+		if (Input.GetKey (KeyCode.K)) {
 			cam1.enabled = false;
 			cam2.enabled = true;
 
 			EnemyMovement em = new EnemyMovement ();
 			em.start = true;
+		}
+		if(Input.GetKey(KeyCode.L)){
+				cam1.enabled = true;
+				cam2.enabled = false;
+
 		}
 	}
 }

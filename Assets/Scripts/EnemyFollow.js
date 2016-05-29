@@ -1,12 +1,13 @@
 ﻿#pragma strict
 
  var target : Transform; //the enemy's target
- var moveSpeed = 3; //move speed
+ var moveSpeed = 1; //move speed
  var rotationSpeed = 3; //speed of turning
  var range : float=10f;
  var range2 : float=10f;
  var stop : float=0;
  var myTransform : Transform; //current transform data of this enemy
+ var health : int = 10;
 
  var animator : Animator;
 

@@ -5,8 +5,7 @@ public class Attack : MonoBehaviour {
 	
 	public GameObject arrowPrefab;
 
-
-
+	Animator anim;
 	/*
 	public int i = 1;
 	float distance = 10.0f;
@@ -67,13 +66,14 @@ public class Attack : MonoBehaviour {
 	void Start ()
 	{
 		falsePull = false;
+		anim = GetComponent<Animator> ();
+
 	}
 
 	void Update()
 	{
 		if (Input.GetMouseButtonDown (0)) {
 			if (Time.time > nextFire) {
-				Debug.Log (Time.time + "   " + nextFire);
 				nextFire = Time.time + fireRate;
 				pullStartTime = Time.time;
 			} else {
@@ -82,6 +82,9 @@ public class Attack : MonoBehaviour {
 		}
 		if (Input.GetMouseButtonUp (0)) 
 		{
+		//	gameObject.transform.Rotate (0,90,0);
+			anim.SetTrigger ("Fire");
+
 			if (!falsePull) {
 				nextFire = Time.time + pullTime;
 
@@ -92,11 +95,12 @@ public class Attack : MonoBehaviour {
 				float arrowSpeed = ArrowSpeed * timePulledBack;
 
 				Vector3 pos = gameObject.transform.position;
-				pos.y += 7.5f;
+				pos.y += 5f;
 				//pos.z += 5;
 
 				GameObject go = Instantiate (arrowPrefab, pos, transform.rotation) as GameObject;
-				go.transform.Rotate (90, 0, 0);
+
+				go.transform.Rotate (90, 90, 0);
 				Collider cl1 = arrowPrefab.GetComponent<Collider> ();
 				Collider cl2 = transform.root.GetComponent<Collider> ();
 
@@ -105,7 +109,7 @@ public class Attack : MonoBehaviour {
 				Rigidbody rb = new Rigidbody ();
 				rb = go.GetComponent<Rigidbody> ();
 
-				rb.AddForce (transform.forward * arrowSpeed);
+				rb.AddForce ( (-1 * transform.right) * arrowSpeed);
 			} 
 			else 
 			{
