@@ -13,15 +13,16 @@ public enum PlayerType {
 }
 
 public class GameManager : MonoBehaviour {
-	public int health;
+	public int health ;
 	public float playerHealth = 100f;
 	public int gold = 500;
+	public int level = 1;
 	public GameState state;
 	public PlayerType playerType;
 
 
 	void Start () {
-		health = 20;
+		health = 10;
 		state = GameState.CONT;
 		playerType = PlayerType.Archer;
 		Time.timeScale = 1;

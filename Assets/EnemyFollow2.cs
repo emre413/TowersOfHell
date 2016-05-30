@@ -39,6 +39,7 @@ public class EnemyFollow2 : MonoBehaviour {
 
 	void FixedUpdate () {
 		//rotate to look at the player
+		animator.SetBool("Run", true);
 		var distance = Vector3.Distance(myTransform.position, target.position);
 
 		if (distance <= range2 &&  distance >= range){
@@ -48,6 +49,7 @@ public class EnemyFollow2 : MonoBehaviour {
 
 		else if(distance <= range && distance > stop){
 			//move towards the player
+			animator.SetBool("Run", false);
 			myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 			myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
 		}

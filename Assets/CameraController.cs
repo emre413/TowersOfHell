@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public Camera cam1; 
-	private Camera cam2;
+	public Camera cam2;
 	public GameObject swordsman;
 	public GameObject archer;
 	private GameManager gm;
@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour {
 		} else if (archer.activeSelf) {
 			gm.playerType = PlayerType.Archer;
 			cam2 = archer.GetComponentInChildren<Camera> ();
-			gm.playerHealth = 80.0f;
+			gm.playerHealth = 60.0f;
 		} else {
 			Debug.Log ("Both Characters are Inactive at the Same Time!");
 		}
@@ -62,7 +62,7 @@ public class CameraController : MonoBehaviour {
 					} else if (swordsman.activeSelf) {
 						archer.transform.position = new Vector3 (-74.7f, -270.99f, 68.9f);
 						archer.transform.rotation = Quaternion.Euler (0.0f, 90.0f, 0.0f);
-						gm.playerHealth = 80;
+						gm.playerHealth = 60;
 						archer.SetActive (true);
 						archer.GetComponentInChildren<Camera> ().enabled = true;
 						gm.gold -= changeCost;
