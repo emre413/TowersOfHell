@@ -20,9 +20,10 @@ public class EnemyRunAway : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			manager.health--;
 
-			if (manager.health == 0)
+			if (manager.health == 0) {
 				manager.state = GameState.LOST;
-
+				Time.timeScale = 0;
+			}
 		}
 	}
 }

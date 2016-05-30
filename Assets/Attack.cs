@@ -4,6 +4,7 @@ using System.Collections;
 public class Attack : MonoBehaviour {
 	
 	public GameObject arrowPrefab;
+	public Camera cam2;
 
 	Animator anim;
 	/*
@@ -72,52 +73,48 @@ public class Attack : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetMouseButtonDown (0)) {
-			if (Time.time > nextFire) {
-				nextFire = Time.time + fireRate;
-				pullStartTime = Time.time;
-			} else {
-				falsePull = true;
+		if (cam2.enabled) {
+			if (Input.GetMouseButtonDown (0)) {
+				if (Time.time > nextFire) {
+					nextFire = Time.time + fireRate;
+					pullStartTime = Time.time;
+				} else {
+					falsePull = true;
+				}
+			}
+			if (Input.GetMouseButtonUp (0)) {
+				//	gameObject.transform.Rotate (0,90,0);
+				anim.SetTrigger ("Fire");
+
+				if (!falsePull) {
+					nextFire = Time.time + pullTime;
+
+					float timePulledBack = Time.time - pullStartTime;
+					if (timePulledBack > maxStrengthPullTime)
+						timePulledBack = maxStrengthPullTime;
+
+					float arrowSpeed = ArrowSpeed * timePulledBack;
+
+					Vector3 pos = gameObject.transform.position;
+					pos.y += 5f;
+					//pos.z += 5;
+
+					GameObject go = Instantiate (arrowPrefab, pos, transform.rotation) as GameObject;
+
+					go.transform.Rotate (90, 90, 0);
+					Collider cl1 = arrowPrefab.GetComponent<Collider> ();
+					Collider cl2 = transform.root.GetComponent<Collider> ();
+
+					Physics.IgnoreCollision (cl1, cl2);
+
+					Rigidbody rb = new Rigidbody ();
+					rb = go.GetComponent<Rigidbody> ();
+
+					rb.AddForce ((-1 * transform.right) * arrowSpeed);
+				} else {
+					falsePull = false;
+				}
 			}
 		}
-		if (Input.GetMouseButtonUp (0)) 
-		{
-		//	gameObject.transform.Rotate (0,90,0);
-			anim.SetTrigger ("Fire");
-
-			if (!falsePull) {
-				nextFire = Time.time + pullTime;
-
-				float timePulledBack = Time.time - pullStartTime;
-				if (timePulledBack > maxStrengthPullTime)
-					timePulledBack = maxStrengthPullTime;
-
-				float arrowSpeed = ArrowSpeed * timePulledBack;
-
-				Vector3 pos = gameObject.transform.position;
-				pos.y += 5f;
-				//pos.z += 5;
-
-				GameObject go = Instantiate (arrowPrefab, pos, transform.rotation) as GameObject;
-
-				go.transform.Rotate (90, 90, 0);
-				Collider cl1 = arrowPrefab.GetComponent<Collider> ();
-				Collider cl2 = transform.root.GetComponent<Collider> ();
-
-				Physics.IgnoreCollision (cl1, cl2);
-
-				Rigidbody rb = new Rigidbody ();
-				rb = go.GetComponent<Rigidbody> ();
-
-				rb.AddForce ( (-1 * transform.right) * arrowSpeed);
-			} 
-			else 
-			{
-				falsePull = false;
-			}
-				
-		}
-
 	}
-
 }

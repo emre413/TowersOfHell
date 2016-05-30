@@ -7,16 +7,24 @@ public enum GameState {
 	LOST
 }
 
+public enum PlayerType {
+	Swordsman,
+	Archer
+}
+
 public class GameManager : MonoBehaviour {
 	public int health;
 	public float playerHealth = 100f;
 	public int gold = 500;
 	public GameState state;
+	public PlayerType playerType;
 
 
 	void Start () {
 		health = 20;
 		state = GameState.CONT;
+		playerType = PlayerType.Archer;
+		Time.timeScale = 1;
 	}
 
 	void OnGUI() {

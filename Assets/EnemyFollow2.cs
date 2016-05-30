@@ -4,11 +4,11 @@ using System.Collections;
 public class EnemyFollow2 : MonoBehaviour {
 
 	public Transform target; //the enemy's target
-	public int moveSpeed = 1; //move speed
+	public float moveSpeed = 1.0f; //move speed
 	public int rotationSpeed = 3; //speed of turning
-	public float range = 10f;
-	public float range2 = 10f;
-	public float stop = 0;
+	public float range = 5.0f;
+	public float range2 = 10.0f;
+	public float stop = 0.0f;
 	public Transform myTransform; //current transform data of this enemy
 	public int health = 10;
 
@@ -24,7 +24,17 @@ public class EnemyFollow2 : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		animator.SetBool("Run", true);
 		target = GameObject.FindWithTag("Player").transform; //target the player
+	}
 
+	void Update() {
+		GameObject[] playerObjs = GameObject.FindGameObjectsWithTag ("Player");
+
+		foreach (GameObject playerObj in playerObjs) {
+			if (playerObj.activeSelf) {
+				target = playerObj.transform;
+				break;
+			}
+		}
 	}
 
 	void FixedUpdate () {
